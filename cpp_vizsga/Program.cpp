@@ -1,12 +1,8 @@
-#include "Program.h"
+#include <iostream>
 
+using namespace std;
 
+int main() {
 
-Program::Program()
-{
-}
-
-
-Program::~Program()
-{
+	return 0;
 }

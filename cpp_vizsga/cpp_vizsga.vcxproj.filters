@@ -24,16 +24,13 @@
     <ClInclude Include="Recorder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Program.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MiniDV.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Casette.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="VHS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MiniDV.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
