@@ -1,7 +1,7 @@
 #pragma once
 #include "Recorder.h"
 
-class CD : Recorder
+class CD : public Recorder
 {
 private:
 	int capacity;

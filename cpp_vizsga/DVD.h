@@ -1,7 +1,7 @@
 #pragma once
 #include "CD.h"
 
-class DVD :CD
+class DVD : public CD
 {
 private:
 	int pagesNum;

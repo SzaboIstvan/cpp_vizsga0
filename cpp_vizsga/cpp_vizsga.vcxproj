@@ -114,6 +114,7 @@
     <ClInclude Include="CD.h" />
     <ClInclude Include="DVD.h" />
     <ClInclude Include="MiniDV.h" />
+    <ClInclude Include="Program.h" />
     <ClInclude Include="Recorder.h" />
     <ClInclude Include="VHS.h" />
   </ItemGroup>

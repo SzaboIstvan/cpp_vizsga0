@@ -1,7 +1,7 @@
 #pragma once
 #include "VHS.h"
 
-class MiniDV:VHS
+class MiniDV: public VHS
 {
 private:
 	int memory;

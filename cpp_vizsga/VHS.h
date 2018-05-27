@@ -1,6 +1,6 @@
 #pragma once
 #include "Casette.h"
-class VHS:Casette
+class VHS: public Casette
 {
 private:
 	int mode;

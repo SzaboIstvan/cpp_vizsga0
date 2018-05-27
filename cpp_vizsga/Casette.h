@@ -1,6 +1,6 @@
 #pragma once
 #include "Recorder.h"
-class Casette:	Recorder
+class Casette: public Recorder
 {
 private:
 	int length;
