@@ -123,21 +123,27 @@ void PrintAlbums() {
 }
 
 void Search() {
+	if (counter == 0)
+	{
+		cout << "Empty list" << endl;
+		return;
+	}
+
 	char name[40];
 	cout << endl << "Name :";
 	cin >> name;
 	for (size_t i = 0; i < counter; ++i)
 	{
 		int c = 0;
-		auto akt = recorders[counter]->GetName();
-		while (name[c] == akt[c] && c != '\0')
+		auto akt = recorders[i]->GetName();
+		while ((name[c] == akt[c]) && (akt[c] != '\0'))
 		{
 			c++;
 		}
 
-		if (name[c]==akt[c]=='\0')
+		if ((name[c] == akt[c]) && (akt[c] == '\0'))
 		{
-			recorders[counter]->Print();
+			recorders[i]->Print();
 			return;
 		}
 	}
