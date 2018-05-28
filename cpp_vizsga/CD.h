@@ -6,9 +6,8 @@ class CD : public Recorder
 private:
 	int capacity;
 public:
-	CD();
+	CD(char* _type, char* _name, int _capacity);
 	virtual ~CD();
-	virtual void Input(char* _type, char* _name, int _capacity);
 	virtual void Print();
 };
 

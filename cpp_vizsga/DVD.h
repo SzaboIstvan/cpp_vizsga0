@@ -6,9 +6,8 @@ class DVD : public CD
 private:
 	int pagesNum;
 public:
-	DVD();
+	DVD(char* _type, char* _name, int _capacity, int _pagesNum);
 	~DVD();
-	void Input(char* _type, char* _name, int _capacity, int _pagesNum);
 	void Print();
 
 };

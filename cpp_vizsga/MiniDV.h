@@ -6,9 +6,8 @@ class MiniDV: public VHS
 private:
 	int memory;
 public:
-	MiniDV();
+	MiniDV(char* _type, char* _name, int _length, int _mode, int _memory);
 	~MiniDV();
-	void Input(char* _type, char* _name, int _length, int _mode, int _memory);
 	void Print();
 };
 

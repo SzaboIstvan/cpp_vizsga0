@@ -26,62 +26,96 @@ void NewRecord() {
 		cout << "4. VHS" << endl;
 		cout << "5. MiniDV" << endl;
 		char c = getch();
-		char* type = new char[10];
-		char* name = new char[40];
+		char type[10];
+		char name[40];
+
 		switch (c)
 		{
-		case '1':
-			type = "CD";
-			cout << endl << "Nev: ";
+		case '1': {
+			strcpy(type, "CD");
+			cout << endl << "Name: ";
 			cin >> name;
 			int capacity;
-			cout << endl << "Capacity:";
+			cout << endl << "Capacity: ";
 			cin >> capacity;
 
-			CD* cd = new CD();
+			CD* cd = new CD(type, name, capacity);
 			recorders[counter] = cd;
-			recorders[counter]->Input(type, name, capacity); //too many args, only recorder ctor available
 			counter++;
 			break;
-		case '2':
-			type = "DVD";
-			cout << endl << "Nev: ";
+		}
+		case '2': {
+			strcpy(type, "DVD");
+			cout << endl << "Name: ";
 			cin >> name;
-			int cap;
-			cout << endl << "Capacity:";
-			cin >> cap;
+			int capacity;
+			cout << endl << "Capacity: ";
+			cin >> capacity;
 			int pagesNum;
-			cout << endl << "Pages number:";
+			cout << endl << "Pages number: ";
 			cin >> pagesNum;
 
-			DVD* dvd = new DVD();
+			DVD* dvd = new DVD(type, name, capacity, pagesNum);
 			recorders[counter] = dvd;
-			recorders[counter]->Input(type, name, capacity, pagesNum); //too many args, only recorder ctor available
 			counter++;
 			break;
-		case '3':
-			type = "Casette";
-			cout << endl << "Nev: ";
+		}
+		case '3': {
+			strcpy(type, "Casette");
+			cout << endl << "Name: ";
+			cin >> name;
+			int length;
+			cout << endl << "Length: ";
+			cin >> length;
+
+			Casette* c = new Casette(type, name, length);
+			recorders[counter] = c;
+			counter++;
 			break;
-		case '4':
-			type = "VHS";
-			cout << endl << "Nev: ";
+		}
+		case '4': {
+			strcpy(type, "VHS");
+			cout << endl << "Name: ";
+			cin >> name;
+			int length;
+			cout << endl << "Length: ";
+			cin >> length;
+			int mode;
+			cout << endl << "Mode: ";
+			cin >> mode;
+
+			VHS* vhs = new VHS(type, name, length, mode);
+			recorders[counter] = vhs;
+			counter++;
 			break;
-		case '5':
-			type = "MiniDV";
-			cout << endl << "Nev: ";
+		}
+		case '5': {
+			strcpy(type, "MiniDV");
+			cout << endl << "Name: ";
+			cin >> name;
+			int length;
+			cout << endl << "Length: ";
+			cin >> length;
+			int mode;
+			cout << endl << "Mode: ";
+			cin >> mode;
+			int memory;
+			cout << endl << "Memory: ";
+			cin >> memory;
+
+			MiniDV* m = new MiniDV(type, name, length, mode, memory);
+			recorders[counter] = m;
+			counter++;
 			break;
+		}
 		default:
 			break;
 		}
-
-		delete[] type;
-		delete[] name;
 	}
 }
 
 void PrintAlbums() {
-	for (size_t i = 0; i < counter; i++)
+	for (size_t i = 0; i < counter; ++i)
 	{
 		recorders[i]->Print();
 		cout << endl;
@@ -89,11 +123,28 @@ void PrintAlbums() {
 }
 
 void Search() {
+	char name[40];
+	cout << endl << "Name :";
+	cin >> name;
+	for (size_t i = 0; i < counter; ++i)
+	{
+		int c = 0;
+		auto akt = recorders[counter]->GetName();
+		while (name[c] == akt[c] && c != '\0')
+		{
+			c++;
+		}
 
+		if (name[c]==akt[c]=='\0')
+		{
+			recorders[counter]->Print();
+			return;
+		}
+	}
 }
 
 void Exit() {
-	for (size_t i = 0; i < counter; i++)
+	for (size_t i = 0; i < counter; ++i)
 	{
 		delete recorders[i];
 	}

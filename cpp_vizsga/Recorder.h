@@ -5,9 +5,9 @@ private:
 	char* type;
 	char* name;
 public:
-	Recorder();
+	Recorder(char* _type, char* _name);
 	virtual ~Recorder();
-	virtual void Input(char* _type, char* _name);
 	virtual void Print();
+	char* GetName();
 };
 

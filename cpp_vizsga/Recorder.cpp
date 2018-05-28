@@ -5,8 +5,13 @@
 
 using namespace std;
 
-Recorder::Recorder()
+Recorder::Recorder(char * _type, char * _name)
 {
+	type = new char[10];
+	strcpy(type, _type);
+
+	name = new char[40];
+	strcpy(name, _name);
 }
 
 
@@ -16,16 +21,12 @@ Recorder::~Recorder()
 	delete[] name;
 }
 
-void Recorder::Input(char * _type, char * _name)
-{
-	type = new char[10];
-	strcpy(type, _type);
-
-	name = new char[40];
-	strcpy(name, _name);
-}
-
 void Recorder::Print()
 {
 	cout << "Type: " << type << " Name: " << name;
+}
+
+char* Recorder::GetName()
+{
+	return name;
 }

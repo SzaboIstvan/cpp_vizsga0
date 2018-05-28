@@ -5,9 +5,8 @@ class Casette: public Recorder
 private:
 	int length;
 public:
-	Casette();
+	Casette(char* _type, char* _name, int _length);
 	virtual ~Casette();
-	virtual void Input(char* _type, char* _name, int _length);
 	virtual void Print();
 };
 

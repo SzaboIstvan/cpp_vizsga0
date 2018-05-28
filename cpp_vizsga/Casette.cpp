@@ -3,19 +3,14 @@
 
 using namespace std;
 
-Casette::Casette()
+Casette::Casette(char * _type, char * _name, int _length):Recorder(_type,_name)
 {
+	length = _length;
 }
 
 
 Casette::~Casette()
 {
-}
-
-void Casette::Input(char * _type, char * _name, int _length)
-{
-	Recorder::Input(_type, _name);
-	length = _length;
 }
 
 void Casette::Print()
