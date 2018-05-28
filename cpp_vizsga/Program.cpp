@@ -112,6 +112,10 @@ void NewRecord() {
 			break;
 		}
 	}
+	else
+	{
+		cout << "Array is FULL.";
+	}
 }
 
 void PrintAlbums() {
@@ -160,7 +164,7 @@ int main() {
 	bool exit = false;
 	do
 	{
-		cout << "*** Menu ***" << endl;
+		cout << endl << "*** Menu ***" << endl;
 		cout << "1.Bevitel" << endl;
 		cout << "2.Lista" << endl;
 		cout << "3.Kereses" << endl;
