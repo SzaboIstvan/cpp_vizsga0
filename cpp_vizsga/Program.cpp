@@ -16,38 +16,6 @@ int counter = 0;
 
 Recorder* recorders[MAX];
 
-int main() {
-	bool exit = false;
-	do
-	{
-		cout << endl << "*** Menu ***" << endl;
-		cout << "1.Bevitel" << endl;
-		cout << "2.Lista" << endl;
-		cout << "3.Kereses" << endl;
-		cout << "4.Kilepes" << endl;
-		char c = getch();
-		switch (c)
-		{
-		case '1':
-			NewRecord();
-			break;
-		case '2':
-			PrintAlbums();
-			break;
-		case '3':
-			Search();
-			break;
-		case '4':
-			Exit();
-			break;
-		default:
-			break;
-		}
-
-	} while (!exit);
-	return 0;
-}
-
 void CreateCD() {
 	char type[10];
 	char name[40];
@@ -227,3 +195,36 @@ void Exit() {
 		delete recorders[i];
 	}
 }
+
+int main() {
+	bool exit = false;
+	do
+	{
+		cout << endl << "*** Menu ***" << endl;
+		cout << "1.Bevitel" << endl;
+		cout << "2.Lista" << endl;
+		cout << "3.Kereses" << endl;
+		cout << "4.Kilepes" << endl;
+		char c = getch();
+		switch (c)
+		{
+		case '1':
+			NewRecord();
+			break;
+		case '2':
+			PrintAlbums();
+			break;
+		case '3':
+			Search();
+			break;
+		case '4':
+			Exit();
+			break;
+		default:
+			break;
+		}
+
+	} while (!exit);
+	return 0;
+}
+
