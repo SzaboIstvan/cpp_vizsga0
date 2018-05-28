@@ -187,6 +187,7 @@ void Search() {
 			return;
 		}
 	}
+	cout << endl << "Not found!";
 }
 
 void Exit() {
@@ -219,7 +220,7 @@ int main() {
 			break;
 		case '4':
 			Exit();
-			break;
+			return 0;
 		default:
 			break;
 		}
