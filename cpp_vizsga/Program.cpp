@@ -6,13 +6,12 @@
 #include "DVD.h"
 #include "MiniDV.h"
 #include "VHS.h"
-#include "Program.h"
 #pragma warning(disable : 4996) //getch
 
 using namespace std;
 
 const int MAX = 5;
-int counter = 0;
+size_t counter = 0;
 
 Recorder* recorders[MAX];
 
@@ -118,8 +117,6 @@ void NewRecord() {
 		cout << "4. VHS" << endl;
 		cout << "5. MiniDV" << endl;
 		char c = getch();
-		char type[10];
-		char name[40];
 
 		switch (c)
 		{
