@@ -8,6 +8,22 @@ DVD::DVD(char * _type, char * _name, int _capacity, int _pagesNum) : CD(_type, _
 	pagesNum = _pagesNum;
 }
 
+DVD::DVD(const DVD & dvd) : CD(dvd)
+{
+	pagesNum = dvd.pagesNum;
+}
+
+DVD & DVD::operator=(const DVD & other)
+{
+	if (&other != this)
+	{
+		CD::operator=(other);
+		pagesNum = other.pagesNum;
+	}
+
+	return *this;
+}
+
 
 DVD::~DVD()
 {

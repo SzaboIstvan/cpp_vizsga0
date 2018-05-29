@@ -14,6 +14,28 @@ Recorder::Recorder(char * _type, char * _name)
 	strcpy(name, _name);
 }
 
+Recorder::Recorder(const Recorder &rec) {
+	type = new char[10];
+	strcpy(type, rec.type);
+
+	name = new char[40];
+	strcpy(name, rec.name);
+}
+
+Recorder & Recorder::operator=(const Recorder & other)
+{
+	if (&other != this)
+	{
+		type = new char[10];
+		strcpy(type, other.type);
+
+		name = new char[40];
+		strcpy(name, other.name);
+	}
+
+	return *this;
+}
+
 
 Recorder::~Recorder()
 {
